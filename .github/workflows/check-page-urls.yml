@@ -3,7 +3,7 @@ name: Check Documentation Changes
 on:
   pull_request:
     branches:
-      - master  # Only run on PRs targeting master
+      - master
 
 jobs:
   check-changes:
@@ -33,6 +33,7 @@ jobs:
           echo "RENAMED_FILES<<EOF" >> $GITHUB_ENV
           echo "$RENAMED_FILES" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
+
 
           # Set the warning flag if there are deleted or renamed files
           if [[ -n "$DELETED_FILES" || -n "$RENAMED_FILES" ]]; then
