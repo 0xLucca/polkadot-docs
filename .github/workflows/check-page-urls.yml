@@ -52,7 +52,7 @@ jobs:
             const deletedFiles = `${process.env.DELETED_FILES}`.trim();
             const renamedFiles = `${process.env.RENAMED_FILES}`.trim();
             
-            let message = `🔍 **Documentation URL Checker**\n\nThis PR modifies documentation files in ways that could potentially create broken links. Please verify that:\n\n`;
+            let message = `🔍 **Documentation URL Checker**\n\nThis PR modifies documentation files in ways that could potentially create broken links.\n\n`;
             
             if (deletedFiles) {
               message += `**Deleted markdown files:**\n\`\`\`\n${deletedFiles}\n\`\`\`\n\n`;
@@ -62,7 +62,7 @@ jobs:
               message += `**Renamed markdown files:**\n\`\`\`\n${renamedFiles}\n\`\`\`\n\n`;
             }
             
-            message += `🚨 Please review these documentation changes carefully - they could create broken links (404 errors) if not handled properly. Consider adding redirects from the old URLs to maintain a smooth user experience. 🚨`;
+            message += `🚨 Please review these changes carefully 🚨\n\n If not handled properly, broken links (404 errors) could appear. To maintain a smooth user experience, consider:\n- Adding redirects in the \`mkdocs.yml\` file from the old URLs to the new ones\n- Updating internal references to these files`;
             
             github.rest.issues.createComment({
               owner: repo.owner,
