@@ -10,7 +10,7 @@ Polkadot offers specialized tools that make it simple to create realistic testin
 
 ## Get Started
 
-Through these tutorials, you'll learn important testing techniques including:
+Through these tutorials, you'll learn important testing techniques includingasd
 
 - Setting up local test environments
 - Spawning ephemeral testing networks
